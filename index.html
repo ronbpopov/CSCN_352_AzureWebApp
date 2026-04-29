@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CornerStone Footwear Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #1f2937;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 24px 40px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      color: #d1d5db;
+    }
+
+    .container {
+      padding: 32px 40px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .card .value {
+      font-size: 30px;
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .positive {
+      color: #15803d;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .warning {
+      color: #b45309;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 14px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .status {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .in-stock {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .low-stock {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .out-stock {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .list {
+      margin-top: 16px;
+      list-style: none;
+    }
+
+    .list li {
+      padding: 14px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .button {
+      margin-top: 18px;
+      display: inline-block;
+      background: #111827;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header, .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CornerStone Footwear Dashboard</h1>
+    <p>Business overview for sales, inventory, and customer activity</p>
+  </header>
+
+  <main class="container">
+    <section class="metrics">
+      <div class="card">
+        <h2>Total Monthly Revenue</h2>
+        <div class="value">$42,850</div>
+        <p class="positive">▲ 12% from last month</p>
+      </div>
+
+      <div class="card">
+        <h2>Pairs Sold</h2>
+        <div class="value">1,284</div>
+        <p class="positive">▲ 8% increase</p>
+      </div>
+
+      <div class="card">
+        <h2>Inventory Items</h2>
+        <div class="value">3,920</div>
+        <p class="warning">18 items need restocking</p>
+      </div>
+
+      <div class="card">
+        <h2>Customer Satisfaction</h2>
+        <div class="value">94%</div>
+        <p class="positive">Based on recent reviews</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Top Selling Products</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Sold</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>StrideMax Runner</td>
+              <td>Running Shoe</td>
+              <td>342</td>
+              <td><span class="status in-stock">In Stock</span></td>
+            </tr>
+            <tr>
+              <td>UrbanStep Casual</td>
+              <td>Everyday Shoe</td>
+              <td>285</td>
+              <td><span class="status low-stock">Low Stock</span></td>
+            </tr>
+            <tr>
+              <td>TrailGuard Hiker</td>
+              <td>Outdoor Boot</td>
+              <td>198</td>
+              <td><span class="status in-stock">In Stock</span></td>
+            </tr>
+            <tr>
+              <td>Classic WorkPro</td>
+              <td>Work Shoe</td>
+              <td>156</td>
+              <td><span class="status out-stock">Out of Stock</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Business Alerts</h2>
+        <ul class="list">
+          <li><strong>Restock Needed:</strong> UrbanStep Casual sizes 9-11 are running low.</li>
+          <li><strong>Sales Spike:</strong> Running shoes are the highest performing category.</li>
+          <li><strong>Customer Feedback:</strong> Customers requested more wide-size options.</li>
+          <li><strong>Shipping:</strong> 23 orders are currently awaiting fulfillment.</li>
+        </ul>
+        <button class="button" onclick="showReport()">Generate Summary</button>
+        <p id="summary" style="margin-top: 16px; color: #374151;"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    CornerStone Footwear &copy; 2026 | Static Web App Demo
+  </footer>
+
+  <script>
+    function showReport() {
+      document.getElementById("summary").innerText =
+        "Summary: CornerStone Footwear is performing well this month, with revenue and sales both increasing. Main priority: restock low inventory items and monitor customer demand for additional shoe sizes.";
+    }
+  </script>
+</body>
+</html>
